@@ -1,3 +1,6 @@
+// comment schema, defines what comment should look like and contain
+// borrowed from minifilm and minipost
+
 const mongoose = require('mongoose')
 
 const commentSchema = mongoose.Schema({

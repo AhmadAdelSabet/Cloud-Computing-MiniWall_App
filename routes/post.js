@@ -1,3 +1,6 @@
+// based on minifilm lab code
+// create, delete, edit, and read posts
+
 const express = require('express')
 const router = express.Router()
 
@@ -10,6 +13,7 @@ router.post('/write', verify, async (req,res) => {
     const{error} = postVal(req.body)
     if(error) {return res.status(400).send({message:error['details'][0]['message']})}
 
+    // create new post if valid
     const post = new Post({
         title: req.body.title,
         description: req.body.description,
@@ -40,6 +44,7 @@ router.patch('/edit/:postID', verify, async (req, res) => {
     if(postExists.author != req.user._id) {return res.status(400).send({message:'Post not yours'})}
 
     try {
+        // new post title and description
         const editPost = await Post.updateOne(
             {_id: req.params.postID},
             {$set: 

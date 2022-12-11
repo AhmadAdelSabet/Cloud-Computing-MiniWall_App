@@ -1,3 +1,7 @@
+// based on minifilm app code
+// has registration and login steps
+// checks if user exists, user meets conditions to register or sign up, etc.
+
 const express = require('express')
 const router = express.Router()
 const User = require('../models/User')

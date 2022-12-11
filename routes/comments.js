@@ -1,3 +1,6 @@
+// based on minifilm lab code
+// create, delete, edit, and read comments
+
 const express = require('express')
 const router = express.Router()
 const Post = require('../models/Posts')
@@ -15,6 +18,7 @@ router.post('/write/:postID', verify, async (req, res) => {
     const {error} = commentVal(req.body)
     if(error) {return res.status(400).send({message:error['details'][0]['message']})}
 
+    // create new comment
     const comment = new Comment({
         post: req.params.postID,
         author: req.user._id,

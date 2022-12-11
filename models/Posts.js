@@ -1,3 +1,6 @@
+// post schema, defines what posts should look like and contain
+// borrowed from minifilm and minipost
+
 const mongoose = require('mongoose')
 
 const postSchema = mongoose.Schema({

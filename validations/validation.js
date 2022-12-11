@@ -1,3 +1,4 @@
+//based on minifilm app
 const joi = require('joi')
 
 /* rules for registration */

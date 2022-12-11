@@ -1,3 +1,6 @@
+// like schema, defines info that like should contain
+// borrowed from minifilm and minipost
+
 const mongoose = require('mongoose')
 
 const LikeSchema = new mongoose.Schema({

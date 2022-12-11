@@ -1,3 +1,6 @@
+// user schema, defines what user should look like and contain
+// borrowed from minifilm and minipost
+
 const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema({

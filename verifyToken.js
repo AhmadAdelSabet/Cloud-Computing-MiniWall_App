@@ -1,3 +1,5 @@
+// based on minifilm app
+// token verification file
 const jsonwebtoken = require('jsonwebtoken')
 
 function auth(req, res, next) {
