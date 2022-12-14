@@ -28,4 +28,14 @@ try{
 }catch(err){res.status(400).send({message:err})}
 })
 
+router.get('/view/:postID', verify, async (req, res) => {
+    const postExists = await Post.findById(req.params.postID)
+    if (!postExists) {return res.status(400).send({message:"Post doesnt exist"})}
+
+    try{
+        const likes = await Like.find({likes: req.params.postID})
+        res.send({message:likes.length + " likes"})
+    } catch(err) {res.status(400).send({message:err})}
+})
+
 module.exports = router

@@ -19,13 +19,13 @@ app.use('/api/post', postRoute)
 const likeRoute = require('./routes/like')
 app.use('/api/likes', likeRoute)
 
-app.get('/', (req,res) => {
-    res.send("Hello")
-})
-
 /* comment */
 const commentRoute = require('./routes/comments')
 app.use('/api/comments', commentRoute)
+
+app.get('/', (req,res) => {
+    res.send("Hello")
+})
 
 /* Connect to DB */
 mongoose.connect(process.env.DB_CONNECTOR, () => {
